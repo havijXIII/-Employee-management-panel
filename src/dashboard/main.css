@@ -1,0 +1,190 @@
+/* General Styles */
+.body {
+    color: black;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+}
+
+.container {
+    height: 95vh;
+    width: 75%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right{
+    background-color: #836FFF;
+    width: 30%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    padding-left: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
+.left{
+    background-color: #211951;
+    width: 70%;
+    height: 95vh;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+/* Calendar Section */
+.calendar-C {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    margin-bottom: 20px;
+}
+
+#calendar {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.calendar-N {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    margin-bottom: 20px;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.user-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.settings-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 70px;
+}
+
+.search{
+    padding-top: 25px;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.openning{
+    margin-top: 30px;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: url("/src/img/Jowhareh_galleries_poster_479e8a61-f213-4b4d-9a07-451114457a63.webp") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Action Bar */
+.action-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #F0F3FF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn.add-btn {
+    width: 10%;
+    background-color: #28a745;
+}
+
+.btn.view-all-btn {
+    width: 15%;
+    border: none;
+    margin-right: 20px;
+    background-color: #6c757d;
+}
+
+/* Table Section */
+.table-container {
+    color: #F0F3FF;
+    overflow-x: auto;
+    padding: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: red;
+    border-width: 5px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #fff;
+    color: #000;
+}
+
+table tr:hover {
+    background-color: #000;
+}
+
+.options {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+}
