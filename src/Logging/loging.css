@@ -8,29 +8,48 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("/src/img/Jowhareh_galleries_8_poster_5d35a08a-a291-4572-80a8-d6cb4ea7324f.png") no-repeat;
+    background-position: center;
+    background-size: cover; */
 }
 
 .main{
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("/src/img/software-3682509.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .login-container {
-    background-color: white;
+    margin-bottom: 40px;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 500px;
     height: 400px;
-    display: grid;
     text-align: center;
+    position: relative;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #e0e4ee;
 }
 
 .input-group {
@@ -40,7 +59,7 @@ h2 {
 
 label {
     font-size: 0.9rem;
-    color: #666;
+    color: #e0e4ee;
 }
 
 input {
@@ -53,8 +72,8 @@ input {
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #e0e4ee;
+    color: #e0e4ee;
     border: none;
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
@@ -65,6 +84,6 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #8d99ae;
 }
 
