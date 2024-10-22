@@ -12,59 +12,43 @@ const Dashboard = () => {
     const access = useContext(Access);
 
     const { username } = useParams();
-    const [number, setnumber] = useState(0);
+
+    const [number, setnumber] = useState(1);
     const [users, setUsers] = useState({
-        alireza: [],
-        havij: [{
-            id: 1,
-            date: "date",
-            project: "project",
-            yourjob: "yourjob",
-            deliverytime: "time"
-        }, {
-            id: 1,
-            date: "date",
-            project: "proj6ect",
-            yourjob: "yourjob",
-            deliverytime: "time"
-        }, {
-            id: 11,
-            date: "date",
-            project: "proje11ct",
-            yourjob: "yourjob",
-            deliverytime: "time"
-        },
-        {
-            id: 2,
-            date: "date",
-            project: "pro22ject",
-            yourjob: "yourjob",
-            deliverytime: "time"
-        }, {
-            id: 3,
-            date: "date",
-            project: "proj2ect",
-            yourjob: "yourjob",
-            deliverytime: "time"
-        }, {
-            id: 13,
-            date: "date",
-            project: "pro1ject",
-            yourjob: "yourjob",
-            deliverytime: "time"
+        alireza: [{
+            fullname: "alireza azizi",
+            number: "09",
+            dateEnter: "2000"
         }],
-        ali: []
+        havij: [
+            {
+                fullname: "havij",
+                number: "09",
+                dateEnter: "2000"
+            }
+        ],
+        ali: [{
+            fullname: "ali",
+            number: "09",
+            dateEnter: "2000"
+        }]
     });
     const [userName, setUserName] = useState(users[username]);
-    const [fUserName, setFUserName] = useState(users[username]);
+    const [fUserName, setFUserName] = useState(users[username].filter(u => u.project != undefined));
+    console.log(userName);
 
 
     const handlesearch = (e) => {
-        setUserName(fUserName.filter(o => o.project.includes(e.target.value)))
+        setUserName(fUserName.filter(o => o.project.includes(e.target.value)));
     };
-    const handleDelete = (projName) => {
-        setUserName(userName.filter(o => o.project != projName));
-    }
+
+    const handleDelete = (id) => {
+        const copy = { ...users };
+        copy[username] = [...users[username].filter(o => o.id !== id)];
+        setUsers(copy);
+        setUserName(copy[username].filter(u => u.project != undefined));
+        setFUserName(copy[username].filter(u => u.project != undefined));
+    };
 
 
 
@@ -76,17 +60,14 @@ const Dashboard = () => {
                 <label for="date" class="swal lab">Date:</label>
                 <input type="date" id="date" class="swal2-input swal">
                 </div>
-
                 <div class="form-row">
                 <label for="project" class="swal lab">Project:</label>
                 <input type="text" id="project" class="swal2-input swal" placeholder="Enter project name">
                 </div>
-
                 <div class="form-row">
                 <label for="yourjob" class="swal lab">Your Job:</label>
                 <input type="text" id="yourjob" class="swal2-input swal" placeholder="Enter your job role">
                 </div>
-
                 <div class="form-row">
                 <label for="time" class="swal lab">Time:</label>
                 <input type="date" id="time" class="swal2-input swal">
@@ -108,32 +89,62 @@ const Dashboard = () => {
                     yourjob: yourjob,
                     deliverytime: time
                 }];
-                const newid = number
-                setnumber(newid + 1)
+                setnumber(number + 1);
                 setUsers(copy);
+                setUserName(copy[username].filter(u => u.project != undefined));
+                setFUserName(copy[username].filter(u => u.project != undefined))
+
                 if (!date || !project || !yourjob || !time) {
                     Swal.showValidationMessage(`Please fill in all fields`);
                 }
-                return { date, project, yourjob, time };
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(`
-                    Date: ${result.value.date}
-                    Project: ${result.value.project}
-                    Your Job: ${result.value.yourjob}
-                    Time: ${result.value.time}
-                `
-                );
             }
         });
     };
 
 
+    //if (access.access) {
+    if (username == "alireza") {
+        return (
+            <div className="app-admin">
+                <div className="main-admin">
+                    <div className="personel-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>fullNamw</th>
+                                    <th>number</th>
+                                    <th>dateEnter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    Object.keys(users).map(key => {
+                                        users[key].find(u =>
+                                            <tr key={Math.random()}>
+                                                <td>{u.fullname}</td>
+                                                <td>{u.nmber}</td>
+                                                <td>{u.dateEnter}</td>
+                                                <td className="options" onClick={() => handleDelete(u.id)}>&#128465;</td>
+                                            </tr>);
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
-
-
-    // if (access.access) {
+                    <div className="list-holder">
+                        <div className="admin-box-1">hi</div>
+                        <div className="admin-box-1">hi</div>
+                        <div className="calendar-offer">
+                            <div className="offer">hi</div>
+                            <div className="calendar">hi</div>
+                        </div>
+                    </div>
+                </div>
+            </div >
+        )
+    }
     return (
         <div className="body">
             <div className="container">
@@ -151,7 +162,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className="calendar-N">
-                        {/* <Need /> */}
+                        <Need />
                     </div>
 
                 </div>
@@ -188,7 +199,7 @@ const Dashboard = () => {
                                             <td>{u.project}</td>
                                             <td>{u.yourjob}</td>
                                             <td>{u.deliverytime}</td>
-                                            <td className="options" onClick={() => handleDelete(u.project)}>&#128465;</td>
+                                            <td className="options" onClick={() => handleDelete(u.id)}>&#128465;</td>
                                         </tr>
                                     ))}
                             </tbody>
