@@ -33,7 +33,7 @@ const Dashboard = () => {
             dateEnter: "2000"
         }]
     });
-    const [userName, setUserName] = useState(users[username]);
+    const [userName, setUserName] = useState(users[username].filter(u => u.project != undefined));
     const [fUserName, setFUserName] = useState(users[username].filter(u => u.project != undefined));
     console.log(userName);
 
