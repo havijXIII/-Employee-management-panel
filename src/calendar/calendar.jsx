@@ -27,7 +27,7 @@ const Calendar = () => {
         <div className="calendar-container">
             <div className="header-C">
                 <h3>{month}th</h3>
-                <h3>{time < 12 ? `0${time}` : time - 12}:{minute < 10 ? `0${minute}` : minute}:{second < 10 ? `0${second}` : second}</h3>
+                <h3>{time - 12 < 10 ? `0${time - 12}` : `${time - 12}`}:{minute < 10 ? `0${minute}` : minute}:{second < 10 ? `0${second}` : second}</h3>
                 <h3>{time > 12 ? "pm" : "am"}</h3>
             </div>
         </div>

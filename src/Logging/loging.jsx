@@ -119,7 +119,7 @@ const Logging = () => {
     return (
         <div className="main">
             <div className="login-container">
-                <h2>Login</h2>
+                <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="username">Username</label>

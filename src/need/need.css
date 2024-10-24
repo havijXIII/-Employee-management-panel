@@ -28,7 +28,8 @@
 
 .addNeed {
     width: 25%;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+    background-color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -42,11 +43,13 @@
 }
 
 .card {
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1e1e2c;
+    /* background-color: #1e1e2c; */
+    background-color: #00a693;
     border-radius: 10px;
     margin-right: 5px;
     padding: 15px;
@@ -71,9 +74,11 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #8d99ae;
+    /* background-color: #8d99ae; */
+    background-color: #fff;
     height: 40%;
-    color: #1e1e2c;
+    /* color: #1e1e2c; */
+    color: #00a693;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -81,7 +86,7 @@ h2 {
 }
 
 .training-btn:hover {
-    background-color: #e0e4ee;
+    background-color: #1c39bb;
 }
 
 .form-row{

@@ -1,14 +1,18 @@
 /* General Styles */
 .body {
-    color: #edf2f4;
+    /* color: #edf2f4; */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background: url("/src/img/mohsen-golriz-jnvAN0wckSk-unsplash.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;  
     margin: 0;
     padding: 20px;
     height: 100vh;
 }
 
 .container {
+    border: 2px solid #ebb40f;
     height: 95vh;
     width: 75%;
     margin: 0 auto;
@@ -18,7 +22,8 @@
 }
 
 .right{
-    background-color: #8d99ae;
+    /* background-color: #8d99ae; */
+    background-color: #1c39bb;
     width: 30%;
     height: 95vh;
     display: flex;
@@ -32,7 +37,8 @@
 }
 
 .left{
-    background-color: #2b2d42;
+    /* background-color: #2b2d42; */
+    background-color: #00a693;
     width: 70%;
     height: 95vh;
     border-top-left-radius: 50px;
@@ -89,7 +95,8 @@
     font-size: 18px;
     font-weight: bold;
     margin-right: 10px;
-    color: #1e1e2c;
+    /* color: #1e1e2c; */
+    color: #fff;
 }
 
 .settings-btn {
@@ -121,7 +128,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: url("/src/img/Jowhareh_galleries_poster_479e8a61-f213-4b4d-9a07-451114457a63.webp") no-repeat;
+    background: url("/src/img/mohsen-golriz-jnvAN0wckSk-unsplash.jpg") no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -137,21 +144,20 @@
 
 .btn {
     padding: 10px 20px;
-    color: #1e1e2c;
+    color: #1c39bb;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .btn.add-btn {
     width: 10%;
+    /* background-color: #e0e4ee; */
     background-color: #e0e4ee;
 }
 
-.btn.view-all-btn {
-    width: 15%;
-    border: none;
-    margin-right: 20px;
-    background-color: #e0e4ee;
+.add-btn:hover {
+    background-color: #1c39bb;
+    color: #ebb40f;
 }
 
 /* Table Section */
@@ -175,14 +181,17 @@ table th, table td {
 }
 
 table th {
-    background-color: #8d99ae;
-    color: #e0e4ee;
+    /* background-color: #8d99ae; */
+    background-color: #ebb40f;
+    /* color: #e0e4ee; */
+    color: #fff;
 }
 
 table tr:hover {
-    background-color: #1e1e2c;
-    color: #e0e4ee;
-
+    /* background-color: #1e1e2c; */
+    background-color: #1c39bb;
+    /* color: #e0e4ee; */
+    color: #fff;
 }
 
 .options {
@@ -209,7 +218,8 @@ table tr:hover {
 }
 
 .swal{
-    color: #1e1e2c;
+    /* color: #1e1e2c; */
+    color: #1c39bb;
 }
 .lab{
     font-size: x-large;
@@ -237,9 +247,13 @@ table tr:hover {
 
 /* admin */
 .app-admin{
+    color: #fff;
     height: 100vh;
     display: flex;
     justify-content: center;
+    background: url("/src/img/mohsen-golriz-jnvAN0wckSk-unsplash.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .main-admin{
@@ -253,7 +267,7 @@ table tr:hover {
 .list-holder{
     padding: 50px 150px;
     display: flex;
-    width: 100%;
+    width: 90%;
 }
 
 .personel-list{
@@ -264,18 +278,34 @@ table tr:hover {
     height: 40vh;
     margin-top: 0px;
     border-radius: 20px;
-    background-color: red;
+    background-color: #00a693;
+    color: #e0e4ee;
+    overflow-x: auto;
+    max-height: 50%;
+}
+
+.personel-list-admin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    margin-top: 0px;
+    border-radius: 20px;
+    background-color: #00a693;
+    color: #e0e4ee;
+    overflow-x: auto;
+    max-height: 50%;
 }
 
 .admin-box-1{
     margin: 20px;
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 80%;
     height: 45vh;
     margin-top: 0px;
     border-radius: 20px;
-    background-color: red;
+    background-color: #00a693;
 }
 
 .calendar-offer{
@@ -289,6 +319,14 @@ table tr:hover {
     flex-direction: column;
 }
 
+.calendar-C-a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 35%;
+    margin-bottom: 20px;
+}
+
 .offer{
     margin: 20px;
     display: flex;
@@ -297,7 +335,7 @@ table tr:hover {
     height: 30vh;
     margin-top: 0px;
     border-radius: 20px;
-    background-color: red;
+    background-color: #00a693;
 }
 
 .calendar{
@@ -308,6 +346,11 @@ table tr:hover {
     height: 45vh;
     margin-top: 0px;
     border-radius: 20px;
-    background-color: red;
+    background-color: #00a693;
 }
 
+.clickShow{
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+}

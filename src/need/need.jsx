@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./need.css"
 import Swal from "sweetalert2";
+import Needs from "../dashboard/Needs";
 
 const Need = () => {
 
-    const [need, setNeed] = useState([]);
     const [number, setnumber] = useState(1);
+    const { users, setUsers, need, setneed, username } = useContext(Needs);
 
     const handleclick = () => {
         Swal.fire({
@@ -31,20 +32,26 @@ const Need = () => {
                 const Title = document.getElementById('title').value;
                 const desc = document.getElementById('desc').value;
                 const time = document.getElementById('time').value;
-                const copy = [...need, {
-                    Id: number,
-                    Title: Title,
-                    Description: desc,
-                    Time: time
-                }];
-                setNeed(copy);
-                setnumber(number + 1);
                 if (!Title || !desc || !time) {
                     Swal.showValidationMessage(`Please fill in all fields`);
+                }
+                else {
+                    const copy = { ...users };
+                    copy[username] = [...copy[username]];
+                    copy[username][0] = [...copy[username][0], {
+                        Id: number,
+                        Title: Title,
+                        Description: desc,
+                        Time: time
+                    }];
+                    setUsers(copy);
+                    setneed(copy[username][0]);
+                    setnumber(number + 1);
                 }
             }
         });
     };
+
     const handleShow = (n) => {
         Swal.fire({
             title: 'Details',
@@ -78,7 +85,7 @@ const Need = () => {
 
             <div className="card-container">
                 {need.map(n =>
-                    <div className="card">
+                    <div className="card" key={Math.random()}>
                         <h2>{n.Title}</h2>
                         <button className="training-btn" onClick={() => handleShow(n)}>See</button>
                     </div>

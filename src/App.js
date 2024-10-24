@@ -27,8 +27,6 @@ function App() {
             <Route path='/loging' element={<Logging />} />
             <Route path="/dashboard/:username" element={<Dashboard />} />
             <Route path="/*" element={<Logging />} />
-            <Route path="/nini" element={<Calendar />} />
-            <Route path="/nono" element={<Need />} />
           </Routes>
         </div>
       </Access.Provider>
